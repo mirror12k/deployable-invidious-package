@@ -82,6 +82,20 @@ services:
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U $$POSTGRES_USER -d $$POSTGRES_DB"]
 
+  caddy:
+    image: caddy:alpine
+    restart: unless-stopped
+    ports:
+      - "8000:3000"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    depends_on:
+      - invidious
+    logging:
+      options:
+        max-size: "1G"
+        max-file: "4"
+
 volumes:
   postgresdata:
   companioncache:

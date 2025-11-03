@@ -1,0 +1,13 @@
+:3000 {
+    header Access-Control-Allow-Origin "{materialious_url}"
+    header Access-Control-Allow-Methods "GET,POST,OPTIONS,HEAD,PATCH,PUT,DELETE"
+    header Access-Control-Allow-Headers "User-Agent,Authorization,Content-Type"
+    header Access-Control-Allow-Credentials "true"
+
+    @options method OPTIONS
+    handle @options {
+        respond 204
+    }
+
+    reverse_proxy invidious:3000
+}
