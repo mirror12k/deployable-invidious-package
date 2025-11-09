@@ -5,8 +5,9 @@ services:
     image: quay.io/invidious/invidious:latest
     # image: quay.io/invidious/invidious:latest-arm64 # ARM64/AArch64 devices
     restart: unless-stopped
-    ports:
-      - "3000:3000"
+    # Port 3000 is exposed internally to caddy proxy only, not to host system
+    expose:
+      - "3000"
     environment:
       # Please read the following file for a comprehensive list of all available
       # configuration options and their associated syntax:
@@ -86,7 +87,7 @@ services:
     image: caddy:alpine
     restart: unless-stopped
     ports:
-      - "8000:3000"
+      - "3000:3000"
     volumes:
       - ./caddy_data:/etc/caddy:ro
     depends_on:

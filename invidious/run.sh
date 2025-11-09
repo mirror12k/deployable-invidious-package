@@ -23,7 +23,7 @@ cat Caddyfile.template \
 	| sed "s#{materialious_url}#$MATERIALIOUS_URL#g" \
 	> "$tmp_dir/invidious/caddy_data/Caddyfile"
 
-cat "$tmp_dir/invidious/docker-compose.yml"
+# cat "$tmp_dir/invidious/docker-compose.yml"
 
 cd "$tmp_dir/invidious"
 
