@@ -89,7 +89,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - ./caddy_data:/etc/caddy:ro
+      - /invidious/caddy_data:/etc/caddy:ro
     depends_on:
       - invidious
     logging:
