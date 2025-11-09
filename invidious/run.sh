@@ -18,9 +18,10 @@ cat docker-compose.yml.template \
 	> "$tmp_dir/invidious/docker-compose.yml"
 
 echo "[i] preparing Caddyfile with MATERIALIOUS_URL=$MATERIALIOUS_URL..."
+mkdir "$tmp_dir/invidious/caddy_data"
 cat Caddyfile.template \
 	| sed "s#{materialious_url}#$MATERIALIOUS_URL#g" \
-	> "$tmp_dir/invidious/Caddyfile"
+	> "$tmp_dir/invidious/caddy_data/Caddyfile"
 
 cat "$tmp_dir/invidious/docker-compose.yml"
 
