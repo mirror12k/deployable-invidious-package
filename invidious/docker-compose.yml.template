@@ -28,7 +28,7 @@ services:
         # Use the key generated in the 2nd step
         invidious_companion_key: "{my_companion_key}"
         # external_port:
-        # domain: {domain}
+        domain: {domain}
         # https_only: false
         # statistics_enabled: false
         # Use the key generated in the 2nd step
