@@ -27,9 +27,9 @@ services:
         # IT is NOT recommended to use the same key as HMAC KEY. Generate a new key!
         # Use the key generated in the 2nd step
         invidious_companion_key: "{my_companion_key}"
-        # external_port:
+        external_port: 3000
         domain: {domain}
-        # https_only: false
+        https_only: false
         # statistics_enabled: false
         # Use the key generated in the 2nd step
         hmac_key: "{my_hmac_key}"
