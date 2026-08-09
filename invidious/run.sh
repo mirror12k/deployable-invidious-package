@@ -35,8 +35,8 @@ cat /app/Caddyfile.template \
 cd "$INVIDIOUS_DATA"
 
 echo "[i] killing any old images"
-docker-compose down
+docker compose down
 echo "[i] pulling images"
-docker-compose pull
+docker compose pull
 echo "[i] uping invidious docker..."
-docker-compose up
+docker compose up
